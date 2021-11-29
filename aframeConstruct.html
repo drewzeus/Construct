@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script>
+      AFRAME.registerComponent('play', {
+        init: function() {
+          var chnl01 = document.querySelector('#ch01');
+          var chnl02 = document.querySelector('#ch02');
+          var chnl03 = document.querySelector('#ch03');
+          var chnl04 = document.querySelector('#ch04');
+          var chnl05 = document.querySelector('#ch05');
+          var chnl06 = document.querySelector('#ch06');
+          var chnl07 = document.querySelector('#ch07');
+          var chnl08 = document.querySelector('#ch08');
+          var chnl09 = document.querySelector('#ch09');
+          var chnl10 = document.querySelector('#ch10');
+          var chnl11 = document.querySelector('#ch11');
+          var chnl12 = document.querySelector('#ch12');
+          document.addEventListener('keyup', event => {
+            if (event.code == 'Space') {
+            chnl01.components.sound.playSound();
+            chnl02.components.sound.playSound();
+            chnl03.components.sound.playSound();
+            chnl04.components.sound.playSound();
+            chnl05.components.sound.playSound();
+            chnl06.components.sound.playSound();
+            chnl07.components.sound.playSound();
+            chnl08.components.sound.playSound();
+            chnl09.components.sound.playSound();
+            chnl10.components.sound.playSound();
+            chnl11.components.sound.playSound();
+            chnl12.components.sound.playSound();
+            }
+          });
+        }
+      });
+      AFRAME.registerComponent('stop', {
+        init: function() {
+          var chnl01 = document.querySelector('#ch01');
+          var chnl02 = document.querySelector('#ch02');
+          var chnl03 = document.querySelector('#ch03');
+          var chnl04 = document.querySelector('#ch04');
+          var chnl05 = document.querySelector('#ch05');
+          var chnl06 = document.querySelector('#ch06');
+          var chnl07 = document.querySelector('#ch07');
+          var chnl08 = document.querySelector('#ch08');
+          var chnl09 = document.querySelector('#ch09');
+          var chnl10 = document.querySelector('#ch10');
+          var chnl11 = document.querySelector('#ch11');
+          var chnl12 = document.querySelector('#ch12');
+          document.addEventListener('keyup', event => {
+            if (event.code == 'Escape') {
+              chnl01.components.sound.stopSound();
+              chnl02.components.sound.stopSound();
+              chnl03.components.sound.stopSound();
+              chnl04.components.sound.stopSound();
+              chnl05.components.sound.stopSound();
+              chnl06.components.sound.stopSound();
+              chnl07.components.sound.stopSound();
+              chnl08.components.sound.stopSound();
+              chnl09.components.sound.stopSound();
+              chnl10.components.sound.stopSound();
+              chnl11.components.sound.stopSound();
+              chnl12.components.sound.stopSound();
+            }
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <a-scene> 
+      <a-assets>
+        <a-sound id="a01" crossorigin="anonymous" src="audio/1.mp3" preload="auto"></a-sound>
+        <a-sound id="a02" crossorigin="anonymous" src="audio/2.mp3" preload="auto"></a-sound>
+        <a-sound id="a03" crossorigin="anonymous" src="audio/3.mp3" preload="auto"></a-sound>
+        <a-sound id="a04" crossorigin="anonymous" src="audio/4.mp3" preload="auto"></a-sound>
+        <a-sound id="a05" crossorigin="anonymous" src="audio/5.mp3" preload="auto"></a-sound>
+        <a-sound id="a06" crossorigin="anonymous" src="audio/6.mp3" preload="auto"></a-sound>
+        <a-sound id="a07" crossorigin="anonymous" src="audio/7.mp3" preload="auto"></a-sound>
+        <a-sound id="a08" crossorigin="anonymous" src="audio/8.mp3" preload="auto"></a-sound>
+        <a-sound id="a09" crossorigin="anonymous" src="audio/9.mp3" preload="auto"></a-sound>
+        <a-sound id="a10" crossorigin="anonymous" src="audio/10.mp3" preload="auto"></a-sound>
+        <a-sound id="a11" crossorigin="anonymous" src="audio/11.mp3" preload="auto"></a-sound>
+        <a-sound id="a12" crossorigin="anonymous" src="audio/12.mp3" preload="auto"></a-sound>
+
+        <a-mixin id="speaker" material="color: #203080"></a-mixin>
+        <a-mixin id="pole" geometry="primitive: cylinder" radius=".25"></a-mixin>
+      </a-assets>
+
+      <a-plane position="3 6 -19" rotation="0 0 0" width="12" height="12" color="#A03030"></a-plane>
+      <a-entity id="ch01" mixin="speaker pole" position="3 3 -19" rotation="90 0 0"
+      sound="src: #a01; autoplay: false; distanceModel: exponential; loop: true; volume: 1; rolloffFactor: .7; refDistance: 1"></a-entity>
+      
+      <a-plane position="-8 6 -16" rotation="0 30 0" width="12" height="12" color="#A03038"></a-plane>
+      <a-entity id="ch02" mixin="speaker pole" position="-8 3 -16" rotation="90 30 0"
+      sound="src: #a02; autoplay: false; distanceModel: exponential; loop: true; volume: 1; rolloffFactor: .7; refDistance: 1"></a-entity>
+      
+      <a-plane position="-16 6 -8" rotation="0 60 0" width="12" height="12" color="#A03040"></a-plane>
+      <a-entity id="ch03" mixin="speaker pole" position="-16 3 -8" rotation="90 60 0"
+      sound="src: #a03; autoplay: false; distanceModel: exponential; loop: true; volume: 1; rolloffFactor: .7; refDistance: 1"></a-entity>
+      
+      <a-plane position="-19 6 3" rotation="0 90 0" width="12" height="12" color="#A03048"></a-plane>
+      <a-entity id="ch04" mixin="speaker pole" position="-19 3 3" rotation="90 90 0"
+      sound="src: #a04; autoplay: false; distanceModel: exponential; loop: true; volume: 1; rolloffFactor: .7; refDistance: 1"></a-entity>
+      
+      <a-plane position="-16 6 14" rotation="0 120 0" width="12" height="12" color="#A03050"></a-plane>
+      <a-entity id="ch05" mixin="speaker pole" position="-16 3 14" rotation="90 120 0"
+      sound="src: #a05; autoplay: false; distanceModel: exponential; loop: true; volume: 1; rolloffFactor: .7; refDistance: 1"></a-entity>
+      
+      <a-plane position="-8 6 22" rotation="0 150 0" width="12" height="12" color="#A03058"></a-plane>
+      <a-entity id="ch06" mixin="speaker pole" position="-8 3 22" rotation="90 150 0"
+      sound="src: #a06; autoplay: false; distanceModel: exponential; loop: true; volume: 1; rolloffFactor: .7; refDistance: 1"></a-entity>
+      
+      <a-plane position="3 6 25" rotation="0 180 0" width="12" height="12" color="#A03060"></a-plane>
+      <a-entity id="ch07" mixin="speaker pole" position="3 3 25" rotation="90 180 0"
+      sound="src: #a07; autoplay: false; distanceModel: exponential; loop: true; volume: 1; rolloffFactor: .7; refDistance: 1"></a-entity>
+      
+      <a-plane position="14 6 22" rotation="0 210 0" width="12" height="12" color="#A03058"></a-plane>
+      <a-entity id="ch08" mixin="speaker pole" position="14 3 22" rotation="90 210 0"
+      sound="src: #a08; autoplay: false; distanceModel: exponential; loop: true; volume: 1; rolloffFactor: .7; refDistance: 1"></a-entity>
+      
+      <a-plane position="22 6 14" rotation="0 240 0" width="12" height="12" color="#A03050"></a-plane>
+      <a-entity id="ch09" mixin="speaker pole" position="22 3 14" rotation="90 240 0"
+      sound="src: #a09; autoplay: false; distanceModel: exponential; loop: true; volume: 1; rolloffFactor: .7; refDistance: 1"></a-entity>
+      
+      <a-plane position="25 6 3" rotation="0 270 0" width="12" height="12" color="#A03048"></a-plane>
+      <a-entity id="ch10" mixin="speaker pole" position="25 3 3" rotation="90 270 0"
+      sound="src: #a10; autoplay: false; distanceModel: exponential; loop: true; volume: 1; rolloffFactor: .7; refDistance: 1"></a-entity>
+      
+      <a-plane position="22 6 -8" rotation="0 300 0" width="12" height="12" color="#A03040"></a-plane>
+      <a-entity id="ch11" mixin="speaker pole" position="22 3 -8" rotation="90 300 0"
+      sound="src: #a11; autoplay: false; distanceModel: exponential; loop: true; volume: 1; rolloffFactor: .7; refDistance: 1"></a-entity>
+      
+      <a-plane position="14 6 -16" rotation="0 330 0" width="12" height="12" color="#A03038"></a-plane>
+      <a-entity id="ch12" mixin="speaker pole" position="14 3 -16" rotation="90 330 0"
+      sound="src: #a12; autoplay: false; distanceModel: exponential; loop: true; volume: 1; rolloffFactor: .7; refDistance: 1"></a-entity>
+      
+      <a-plane position="0 12 0" rotation="90 0 0" width="192" height="192" color="#606060" play></a-plane>
+      <a-plane position="0 0 0" rotation="-90 0 0" width="192" height="192" color="#606060" stop></a-plane>
+      <a-sky color="#FFFFFF"></a-sky>
+    </a-scene>
+  </body>
+</html>
